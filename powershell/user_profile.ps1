@@ -1,7 +1,10 @@
 # set PowerShell to UTF-8
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
-Import-Module posh-git
+#Import's
+# Import-Module posh-git
+# Import-Module PSFzf
+
 $omp_config = Join-Path $PSScriptRoot ".\irfan.omp.json"
 oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
 
@@ -14,13 +17,16 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 Set-PSReadLineOption -PredictionSource History
 
 # Fzf
-Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 # Env
 $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 
+#Function's
+function OpenVSC { code . }
+function GitClone { git clone Get-Clipboard }
 # Alias
+Set-Alias vc OpenVSC
 Set-Alias btw winfetch
 Set-Alias ll ls
 Set-Alias g git
