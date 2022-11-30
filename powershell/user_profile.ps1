@@ -25,8 +25,11 @@ $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 #Function's
 function OpenVSC { code . }
 function GitClone { git clone Get-Clipboard }
+function CodeDirectory { Set-Location D:\CODE }
 # Alias
 Set-Alias vc OpenVSC
+Set-Alias gcl GitClone
+Set-Alias cdc CodeDirectory
 Set-Alias btw winfetch
 Set-Alias ll ls
 Set-Alias g git
