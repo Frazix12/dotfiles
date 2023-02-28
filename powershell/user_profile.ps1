@@ -24,11 +24,18 @@ $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 
 #Function's
 function OpenVSC { code . }
-function GitClone { git clone Get-Clipboard }
+function GitClone { git clone @args }
 function CodeDirectory { Set-Location D:\CODE }
+function Invoke-Tere() {
+  $result = . C:\Users\irfan\.config\tree\tere.exe $args
+  if ($result) {
+    Set-Location $result
+  }
+}
 # Alias
+Set-Alias tere Invoke-Tere
 Set-Alias vc OpenVSC
-Set-Alias gcl GitClone
+Set-Alias gc GitClone
 Set-Alias cdc CodeDirectory
 Set-Alias btw winfetch
 Set-Alias ll ls
