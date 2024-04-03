@@ -7,7 +7,7 @@
 
 # Install
 
-- Run The Folloing Commands
+- Run The Following Commands
   - ```winget install JanDeDobbeleer.OhMyPosh -s winget```
   - ```Install-Module posh-git -Scope CurrentUser -Force```
   - ```Install-Module -Name Terminal-Icons -Repository PSGallery```
